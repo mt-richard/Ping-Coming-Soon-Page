@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping-Comming-Soon</title>
+    <link rel="stylesheet" href="css/style.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="Logo" width="80" height="">
+            </div>
+            <div class="heading">
+                <p>We are launching <b>Soon!</b></p>
+                <p class="p2">Subscrible and get notified</p>
+            </div>
+            <div class="textbox">
+                <form action="" name="myForm" onsubmit="return validateForm()">
+                <input type="text" name="your-email" id="emailbox"  placeholder="Your email address...">
+                <input class="button" type="submit" value="Notify Me">
+            </form>
+            <span id="error-email"></span>
+            </div>
+            <div class="bodyimg">
+                <img src="images/illustration-dashboard.png" alt="Dashboard" height="250" width="400">
+            </div>
+            <div class="footer">
+                <a href=""><i class="fa fa-facebook-f"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <p>@Copyright Ping. All rights reserved.</p>
+            </div>
+            
+        </div>
+        
+        <script>
+            function validateForm(){
+                var email = document.forms["myForm"]["your-email"].value;
+                var span=document.getElementById("error-email")
+                var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+                if (email.match(pattern)) {
+                    document.getElementById('error-email').innerHTML = " Email is Valid, Thanks "; 
+                    document.getElementById('emailbox').style.border= "1px solid green";
+                    document.getElementById('error-email').style.color= "green";
+                }else{
+                    document.getElementById('error-email').innerHTML = "Please enter an invalid email address "; 
+                    document.getElementById('emailbox').style.border= "1px solid red";
+                    document.getElementById('error-email').style.color= "red";
+                }
+                if (email.match(pattern) || !email.match(pattern)) {
+                    return false;
+                }        
+            
+        }
+            </script>
+
+</body>
+</html>
