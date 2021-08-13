@@ -42,7 +42,7 @@
             function validateForm(){
                 var email = document.forms["myForm"]["your-email"].value;
                 var span=document.getElementById("error-email")
-                var pattern =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.;
+                var pattern =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
                 if (email.match(pattern)) {
                     document.getElementById('error-email').innerHTML = " Email is Valid, Thanks "; 
